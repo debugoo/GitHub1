@@ -1,0 +1,65 @@
+server:
+  port:  7900
+  address: 127.0.0.1
+  session:
+    timeout: 10
+  tomcat:
+    uri-encoding: UTF-8  
+spring:
+  jpa:
+    database: MYSQL
+    generate-ddl: false
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/test
+    username: root
+    password: root
+     # 使用druid数据源
+#    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    filters: stat
+    maxActive: 20
+    initialSize: 1
+    maxWait: 60000
+    minIdle: 1
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20
+    dbcp:
+      max-wait: 10000
+    dbcp2:
+      max-idle: 5
+      initial-size: 5
+
+mybatis:
+  config: classpath:mybatis-config.xml
+#  mapperLocations: classpath:mapper/*.xml
+  typeAliasesPackage: tk.mapper.model 
+
+  
+
+
+  
+
+ 
+logging:
+  level:
+    root : INFO
+    org.hibernate: INFO
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
+    com.itmuch: DEBUG
+    
+    
+  
