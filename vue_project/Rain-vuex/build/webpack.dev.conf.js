@@ -23,7 +23,9 @@ module.exports = merge(baseWebpackConfig, {
     }),
     new webpack.ProvidePlugin({
       $: "jquery",
-      jQuery: "jquery"
+      jQuery: "jquery",
+      jquery: "jquery",
+      "window.jQuery": "jquery"
     }),
 
     // https://github.com/glenjamin/webpack-hot-middleware#installation--usage
