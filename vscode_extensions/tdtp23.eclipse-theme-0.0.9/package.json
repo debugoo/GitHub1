@@ -1,0 +1,36 @@
+{
+	"name": "eclipse-theme",
+	"displayName": "Eclipse",
+	"description": "Eclipse Theme - Inspired by the Dark+ and Panda themes.",
+	"version": "0.0.9",
+	"publisher": "tdtp23",
+	"engines": {
+		"vscode": "^1.5.0"
+	},
+	"categories": [
+		"Themes"
+	],
+	"icon": "icon.png",
+	"homepage": "https://github.com/tjporter/Eclipse-Theme",
+	"galleryBanner": {
+		"color": "#f7f7f7"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/tjporter/Eclipse-Theme"
+	},
+	"contributes": {
+		"themes": [
+			{
+				"label": "Eclipse",
+				"uiTheme": "vs-dark",
+				"path": "./themes/eclipse-theme.tmTheme"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "7393ef0c-34cd-49ff-bdee-345163cbda69",
+		"publisherId": "27d8a8eb-88e9-4134-b5f3-3622fd533438",
+		"publisherDisplayName": "Tye Porter"
+	}
+}
