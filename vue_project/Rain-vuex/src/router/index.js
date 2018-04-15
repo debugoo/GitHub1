@@ -6,6 +6,7 @@ import table from '../components/table'
 
 Vue.use(Router)
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
@@ -13,9 +14,9 @@ export default new Router({
       component: table
     },
     {
-      path: '/demo2',
+      path: '/ueditor',
       name: 'demo2',
-      component: Demo2
+      component: resolve => require(['../components/ueditor/index.vue'], resolve)	
     },
     
   ]

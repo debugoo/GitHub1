@@ -1,13 +1,6 @@
 <template>
   <div id="app" class="hello">
-    <el-button size="primary" type="info" icon="plus" @click="openWindow">打开窗口</el-button>
-    <el-dialog title="新增菜单" size="small" v-model="addFormVisible" :close-on-click-modal="false">
-      <div>
-        <el-button size="primary" type="info" icon="plus" @click="getContent">获取内容</el-button>
-        <UEditor :config=config ref="ueditor"></UEditor>
-      </div>
-    </el-dialog>
-
+   <UEditor :config=config ref="ueditor"></UEditor>
   </div>
 </template>
 
@@ -35,7 +28,7 @@
             initialFrameHeight: 450,
             BaseUrl: '',
             UEDITOR_HOME_URL: 'static/ueditor/',
-            serverUrl:'127.0.0.1:7900/file/upload'
+            // serverUrl:'http://127.0.0.1:7900/ueditor/upload'
           },
           addFormVisible: false
         }

@@ -6,7 +6,7 @@
 
 <script>
   import '../../../static/ueditor/ueditor.config'
-  import '../../../static/ueditor/ueditor.all.min'
+  import '../../../static/ueditor/ueditor.all'
   import '../../../static/ueditor/lang/zh-cn/zh-cn'
 
   export default {
