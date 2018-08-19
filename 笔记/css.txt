@@ -1,0 +1,14 @@
+1、立体感关机按钮
+.btn{
+width:160px;
+height:160px;
+padding:20px;
+box-sizing:border-box;
+margin:100px auto;
+border-radius:50%;
+background:
+url(img/button_bg01.png) no-repeat center center,
+linear-gradient(to top,#be4536,#782419) conent-box,
+linear-gradient(#be4536,#782419);
+
+}
