@@ -18,10 +18,10 @@ public class GitUtil {
 	private static final String git_username = "937557708@qq.com";
 	private static final String git_password = "tjr07241711";
 	private static String branch_name = "master";
-	public static String localRepoPath = "D:/repo";
+	public static String localRepoPath = "F:/git_test/API";
 	// public static String localRepoPath+"/.git" = "D:/repo/.git";
 	public static String remoteRepoURI = "https://github.com/a937557708/API.git";
-	public static String localCodeDir = "D:/repo1";
+	public static String localCodeDir = "F:/git_test1";
 
 	/**
 	 * 新建一个分支并同步到远程仓库
@@ -73,16 +73,17 @@ public class GitUtil {
 		git.push().call();
 	}
 
-	public static String cloneRepository(String url, String localPath) {
+	public static String cloneRepository(String branch) {
 		try {
 			System.out.println("开始下载......");
 			// 设置远程服务器上的用户名和密码
 			UsernamePasswordCredentialsProvider provider = new UsernamePasswordCredentialsProvider(git_username,
 					git_password);
-//			CloneCommand cc = Git.cloneRepository().setURI(url);
-//			cc.setDirectory(new File(localPath)).setCredentialsProvider(provider).call();
-			Git git = Git.cloneRepository().setURI(remoteRepoURI).setDirectory(new File(localRepoPath))
-					.setCredentialsProvider(provider).call();
+			CloneCommand cc = Git.cloneRepository().setURI(remoteRepoURI);
+			cc.setBranch(branch);
+			cc.setDirectory(new File(localRepoPath)).setCredentialsProvider(provider).call();
+			// File file = new File(localRepoPath + "/.git");
+			// Git git = Git.open(file);
 
 			System.out.println("下载完成......");
 			return "success";
@@ -142,9 +143,8 @@ public class GitUtil {
 		} catch (Exception e) {
 			e.printStackTrace();
 			pullFlag = false;
-		} finally {
-			return pullFlag;
 		}
+		return pullFlag;
 	}
 
 	/**
@@ -194,10 +194,17 @@ public class GitUtil {
 		File file = new File(localRepoPath + "/.git");
 		if (file.exists()) {
 			pull();
+			// cloneRepository(remoteRepoURI, localRepoPath);
 			// pullBranchToLocal(remoteRepoURI);
 		} else {
-			cloneRepository(remoteRepoURI, localRepoPath);
+			File file1 = new File(localRepoPath);
+			if(file1.exists()) {
+				System.out.println("Destination path “"+localRepoPath+"” already exists and is not an empty directory");
+			}else {
+				cloneRepository(branch_name);
+			}
 		}
+
 	}
 
 	static void setupRepo() throws GitAPIException {
