@@ -220,4 +220,9 @@ public class StringExtend {
 		}
 		return str;
 	}
+	
+	public static void main(String[] args) {
+//		GitUtilClass.init(null);
+		System.out.println("aaa");
+	}
 }
