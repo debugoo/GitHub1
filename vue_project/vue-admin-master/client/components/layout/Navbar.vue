@@ -27,11 +27,10 @@
 </template>
 
 <script>
-import Tooltip from 'vue-bulma-tooltip'
-import { mapGetters, mapActions } from 'vuex'
+import Tooltip from "vue-bulma-tooltip";
+import { mapGetters, mapActions } from "vuex";
 
 export default {
-
   components: {
     Tooltip
   },
@@ -41,30 +40,28 @@ export default {
   },
 
   computed: mapGetters({
-    pkginfo: 'pkg',
-    sidebar: 'sidebar'
+    pkginfo: "pkg",
+    sidebar: "sidebar"
   }),
 
   methods: {
-    ...mapActions([
-      'toggleSidebar'
-    ]),
-    logout () {
+    ...mapActions(["toggleSidebar"]),
+    logout() {
       this.$auth.logout({
-        redirect: 'Home',
+        redirect: "Home",
         makeRequest: false
         // params: {},
         // success: function () {},
         // error: function () {},
         // etc...
-      })
+      });
     }
   }
-}
+};
 </script>
 
 <style lang="scss">
-@import '~bulma/sass/utilities/variables';
+@import "~bulma/sass/utilities/variables";
 
 .app-navbar {
   position: fixed;
@@ -90,10 +87,10 @@ export default {
 .hero-brand {
   .vue {
     margin-left: 10px;
-    color: #36AC70;
+    color: #36ac70;
   }
   .admin {
-    color: #28374B;
+    color: #28374b;
   }
 }
 </style>

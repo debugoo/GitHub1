@@ -7,8 +7,7 @@ import table from '../components/table'
 Vue.use(Router)
 export default new Router({
   mode: 'history',
-  routes: [
-    {
+  routes: [{
       path: '/',
       name: 'demo',
       component: table
@@ -16,8 +15,12 @@ export default new Router({
     {
       path: '/ueditor',
       name: 'demo2',
-      component: resolve => require(['../components/ueditor/index.vue'], resolve)	
+      component: resolve => require(['../components/ueditor/index.vue'], resolve)
     },
-    
+    {
+      path: '/Highlight',
+      name: 'demo2',
+      component: resolve => require(['../components/Highlight/index.vue'], resolve)
+    },
   ]
 })

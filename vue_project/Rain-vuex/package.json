@@ -8,6 +8,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "highlight.js": "^9.15.6",
     "loader-utils": "^1.0.2",
     "popper.js": "^1.14.3",
     "reqwest": "^2.0.5",

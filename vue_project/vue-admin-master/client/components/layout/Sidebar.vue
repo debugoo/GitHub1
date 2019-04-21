@@ -56,14 +56,13 @@ export default {
       isReady: false
     };
   },
-
   mounted() {
     let route = this.$route;
     if (route.name) {
       this.isReady = true;
       this.shouldExpandMatchItem(route);
     }
-    debugger  
+    debugger;
   },
 
   computed: mapGetters({
@@ -124,7 +123,6 @@ export default {
       }
     }
   },
-
   watch: {
     $route(route) {
       this.isReady = true;
